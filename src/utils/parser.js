@@ -45,27 +45,11 @@ const getImageMeta = ( thumbnail ) => {
 };
 
 export const normalizeItem = ( data ) => {
-  const source = data._source;
-  const thumbnail = ( ( source || {} ).thumbnail || {} );
-  const thumbnails = ( thumbnail.sizes || {} );
-
   const obj = {
-    author: source.author,
-    content: source.content,
-    date: getDate( source.language.language_code, source.published ),
-    id: source.post_id ? source.post_id : source.id,
-    language: source.language,
-    link: source.link || '',
-    logo: getLogo( source.site ),
-    modified: source.modified,
-    owner: source.owner,
-    published: source.published,
-    site: source.site,
-    slug: source.slug,
-    sourcelink: `https://${source.site}`,
-    thumbnail: getImage( thumbnails ),
-    thumbnailMeta: getImageMeta( thumbnail ),
-    title: source.title
+    date: data.date,
+    description: data.description,
+    time: data.time,
+    title: data.title
   };
 
   return { ...obj };

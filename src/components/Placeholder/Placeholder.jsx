@@ -12,9 +12,9 @@ const style = {
 const Placeholder = () => (
   <div style={ style }>
     <p>Loading...</p>
-    <img className="cdp-article-single-img" src={ paragraph } alt="" />
+    <img className="cdp-event-single-img" src={ paragraph } alt="" />
     <p />
-    <img className="cdp-article-single-img" src={ paragraph } alt="" />
+    <img className="cdp-event-single-img" src={ paragraph } alt="" />
   </div>
 );
 

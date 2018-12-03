@@ -1,35 +1,40 @@
-.cdp-article-single figure {
+.cdp-event-single figure {
   max-width: 100%;
 }
 
-.cdp-article-single figcaption {
+.cdp-event-single figcaption {
   color: #5b6168;
   font-size: 14px;
   padding: 5px 0;
 }
 
-.cdp-article-single iframe {
+.cdp-event-single iframe {
   display: block;
   margin: 0 auto;
   max-width: 100%;
 }
 
-.cdp-article-single img {
+.cdp-event-single img {
   max-width: 100%;
   height: auto;
 }
 
-.cdp-article-single-media {
+.cdp-event-single-img {
+  max-width: 100%;
+  height: auto;
+}
+
+.cdp-event-single-media {
   display: flex;
   margin: 0 auto 26px;
   position: relative;
 }
 
-.cdp-article-single-content {
+.cdp-event-single-content {
   padding: 10px 0;
 }
 
-.cdp-article-single-title {
+.cdp-event-single-title {
   margin-top: 0;
 }
 

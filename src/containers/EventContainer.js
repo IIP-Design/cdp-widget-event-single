@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import { object } from 'prop-types';
 
-import ArticleItem from '../components/Article/Article';
+import EventItem from '../components/Event/EventItem';
 import Branding from '../components/Branding/Branding';
 import Placeholder from '../components/Placeholder/Placeholder';
 
 import { getItemRequest2 } from '../utils/api';
 import trans from '../utils/translations';
+import { normalizeItem } from '../utils/parser';
 
 
 class EventContainer extends Component {
@@ -34,7 +35,20 @@ class EventContainer extends Component {
   }
 
   onFetchResult = ( response ) => {
-    console.log( response );
+    if ( !response ) {
+      console.log( 'Your request returned no responses. This could be because the owner has removed this content. Please double check the post ID and index in your request.' );
+      this.setState( {
+        isLoading: false,
+        noResults: true
+      } );
+    } else {
+      const data = normalizeItem( response );
+
+      this.setState( {
+        isLoading: false,
+        data
+      } );
+    }
   }
 
   getData() {
@@ -68,7 +82,7 @@ class EventContainer extends Component {
 
     return (
       <div className="cdp-article-single-container">
-        <ArticleItem data={ data } lang={ translations } />
+        <EventItem data={ data } lang={ translations } />
         <Branding data={ data } lang={ translations } />
       </div>
     );
