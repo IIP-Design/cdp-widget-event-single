@@ -1,6 +1,7 @@
 import moment from 'moment';
 
 import { setDateLocale } from './localization';
+import { checkForX } from './helpers';
 
 import logoYali from '../assets/logo_yali.svg';
 import logoYlai from '../assets/logo_ylai.svg';
@@ -42,13 +43,6 @@ const getImageMeta = ( thumbnail ) => {
   };
 
   return imageMeta;
-};
-
-const checkForX = ( x ) => {
-  if ( x ) {
-    return true;
-  }
-  return false;
 };
 
 export const normalizeItem = ( data ) => {

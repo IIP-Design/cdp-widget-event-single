@@ -1,6 +1,7 @@
 import React from 'react';
 
 import paragraph from '../../assets/paragraph.png';
+import './Placeholder.css';
 
 const style = {
   color: '#999',

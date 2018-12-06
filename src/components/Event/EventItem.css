@@ -34,6 +34,12 @@
   position: relative;
 }
 
+.cdp-event-single-meta-container,
+.cdp-event-single-desc-container,
+.cdp-event-single-speakers-container {
+  margin: 1em 0;
+}
+
 .cdp-event-single-meta > p {
   margin-bottom: 0;
 }

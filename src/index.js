@@ -26,13 +26,3 @@ export const widgets = {
     }
   }
 };
-
-// ReactDOM.render(
-//   <EventSingle
-//     selector="iip-events-admin"
-//     query=""
-//     sites=""
-//     ids="1008"
-//   />,
-//   document.getElementById( 'iip-events-admin' )
-// );

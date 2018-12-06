@@ -1,6 +1,7 @@
-import React, { Fragment } from 'react';
-import Parser from 'html-react-parser';
+import React from 'react';
 import { object } from 'prop-types';
+
+import AddToCalendar from '../AddToCalendar/AddToCalendar';
 
 import './EventItem.css';
 
@@ -15,23 +16,26 @@ const EventItem = ( { data } ) => (
       </div>
     ) }
     <div className="cdp-event-single-content">
-      <div className="cdp-event-single-meta">
-        <p><strong>When:</strong>{ data.dateStart }</p>
-        <p><strong>Language:</strong></p>
-        <p><strong>Event Page:</strong></p>
-        <p><strong>Organizer:</strong></p>
-      </div>
+      <section className="cdp-event-single-meta-container">
+        <div className="cdp-event-single-meta">
+          <p><strong>When: </strong>{ data.dateStart }</p>
+          <p><strong>Language: </strong></p>
+          <p><strong>Event Page: </strong></p>
+          <p><strong>Organizer: </strong></p>
+        </div>
+        <AddToCalendar />
+      </section>
       { data.description && (
-        <Fragment>
+        <section className="cdp-event-single-desc-container">
           <h3 className="cdp-event-single-title">Description</h3>
           <p className="cdp-event-single-description">{ data.description }</p>
-        </Fragment>
+        </section>
       ) }
       { data.speakers && (
-        <Fragment>
+        <section className="cdp-event-single-speakers-container">
           <h3 className="cdp-event-single-title">Speakers</h3>
           <div className="cdp-event-single-speakers"> { data.speakers } </div>
-        </Fragment>
+        </section>
       ) }
     </div>
   </article>
