@@ -2,6 +2,7 @@ import axios from 'axios';
 import bodybuilder from 'bodybuilder';
 
 const CDP_PUBLIC_API = `${process.env.REACT_APP_CDP_PUBLIC_API}/v1/search`;
+const INTER_API = 'http://interactive.dev.local/wp-json/iip-events/v1/events/';
 
 export const getItemRequest = ( site, postId ) =>
   axios
@@ -15,5 +16,5 @@ export const getItemRequest = ( site, postId ) =>
 
 export const getItemRequest2 = ( site, postId ) =>
   axios
-    .get( `http://interactive.dev.local/wp-json/iip-events/v1/events/${postId}` )
+    .get( `${INTER_API}${postId}` )
     .then( response => response.data );

@@ -30,22 +30,30 @@
 
 .cdp-event-single-media {
   display: flex;
-  margin: 0 auto 26px;
+  margin: 0 auto 1em;
+  padding: 0 1.5em;
   position: relative;
 }
 
 .cdp-event-single-meta-container,
 .cdp-event-single-desc-container,
 .cdp-event-single-speakers-container {
-  margin: 1em 0;
+  margin: 1em 0 2em;
+}
+
+.cdp-event-single-meta-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 1.5em;
 }
 
 .cdp-event-single-meta > p {
-  margin-bottom: 0;
+  margin: 0;
+  line-height: 1.3em;
 }
 
 .cdp-event-single-content {
-  padding: 10px 0;
+  padding: 0 0 10px;
 }
 
 
