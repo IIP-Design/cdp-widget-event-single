@@ -24,19 +24,24 @@
   height: auto;
 }
 
+.cdp-event-single-title {
+  margin-top: 0;
+}
+
 .cdp-event-single-media {
   display: flex;
   margin: 0 auto 26px;
   position: relative;
 }
 
+.cdp-event-single-meta > p {
+  margin-bottom: 0;
+}
+
 .cdp-event-single-content {
   padding: 10px 0;
 }
 
-.cdp-event-single-title {
-  margin-top: 0;
-}
 
 .alignleft {
   float: left;

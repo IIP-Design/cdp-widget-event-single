@@ -35,14 +35,14 @@ class EventContainer extends Component {
   }
 
   onFetchResult = ( response ) => {
-    if ( !response ) {
+    if ( !response && !response[0] ) {
       console.log( 'Your request returned no responses. This could be because the owner has removed this content. Please double check the post ID and index in your request.' );
       this.setState( {
         isLoading: false,
         noResults: true
       } );
     } else {
-      const data = normalizeItem( response );
+      const data = normalizeItem( response[0] );
 
       this.setState( {
         isLoading: false,

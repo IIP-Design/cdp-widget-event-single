@@ -44,12 +44,22 @@ const getImageMeta = ( thumbnail ) => {
   return imageMeta;
 };
 
+const checkForX = ( x ) => {
+  if ( x ) {
+    return true;
+  }
+  return false;
+};
+
 export const normalizeItem = ( data ) => {
   const obj = {
-    date: data.date,
+    dateStart: data.date,
+    dateEnd: checkForX( data.multiDay ) ? data.endDate : data.date,
     description: data.description,
-    time: data.time,
-    title: data.title
+    timeStart: checkForX( data.hasTime ) ? data.time : null,
+    timeEnd: data.duration || '',
+    title: data.title,
+    thumbnail: data.thumbnail
   };
 
   return { ...obj };

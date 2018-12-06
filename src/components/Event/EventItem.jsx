@@ -6,27 +6,31 @@ import './EventItem.css';
 
 const EventItem = ( { data } ) => (
   <article className="cdp-event-single">
+    <h2 className="cdp-event-single-title">{ data.title }</h2>
     { data.thumbnail && (
       <div className="cdp-event-single-media">
         <figure className="aligncenter">
-          <img className="cdp-event-single-feat-img" src={ data.thumbnail } alt={ data.thumbnailMeta.alt } />
-          <figcaption className="cdp-event-single-feat-cap">{ data.thumbnailMeta.caption }</figcaption>
+          <img className="cdp-event-single-feat-img" src={ data.thumbnail } alt="" />
         </figure>
       </div>
     ) }
     <div className="cdp-event-single-content">
-      <h1 className="cdp-event-single-title">{ data.title }</h1>
-      <div className="cdp-event-single-meta">{ data.date }</div>
+      <div className="cdp-event-single-meta">
+        <p><strong>When:</strong>{ data.dateStart }</p>
+        <p><strong>Language:</strong></p>
+        <p><strong>Event Page:</strong></p>
+        <p><strong>Organizer:</strong></p>
+      </div>
       { data.description && (
         <Fragment>
-          <h2 className="cdp-event-single-title">Description</h2>
-          <div className="cdp-event-single-content"> { data.description } </div>
+          <h3 className="cdp-event-single-title">Description</h3>
+          <p className="cdp-event-single-description">{ data.description }</p>
         </Fragment>
       ) }
       { data.speakers && (
         <Fragment>
-          <h2 className="cdp-event-single-title">Speakers</h2>
-          <div className="cdp-event-single-content"> { data.speakers } </div>
+          <h3 className="cdp-event-single-title">Speakers</h3>
+          <div className="cdp-event-single-speakers"> { data.speakers } </div>
         </Fragment>
       ) }
     </div>
